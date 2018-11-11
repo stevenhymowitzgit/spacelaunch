@@ -2,33 +2,39 @@
   <div style="text-align:center">
     <div class="card">
       <div class="card-header">Space X Launches</div>
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Image</th>
-              <th>Mission Name</th>
-              <th>Rocket Name</th>
-              <th>Launch Site</th>
-              <th>Launch Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let launch of launches">
-              <td>
-                <img
-                  [src]="launch.links.mission_patch_small"
-                  [style.width.px]="imageWidth"
-                  [style.margin.px]="imageMargin"
-                />
-              </td>
-              <td style="padding-right:1px">{{ launch.mission_name }}</td>
-              <td>{{ launch.rocket.rocket_name }}</td>
-              <td>{{ launch.launch_site.site_name }}</td>
-              <td>{{ launch.launch_date_utc | date }}</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="card-body">
+        <div class='row'>
+          <div  class='col-md-2 title'>Filter by Mission Name:</div>
+          <div class='col-md-2'>
+            <input type='text' [(ngModel)]='listFilter' />
+          </div>
+        </div>
+   
+
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Mission Name</th>
+                <th>Rocket Name</th>
+                <th>Launch Site</th>
+                <th>Launch Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let launch of filteredLaunches">
+                <td>
+                  <img [src]="launch.links.mission_patch_small" [style.width.px]="imageWidth" [style.margin.px]="imageMargin" />
+                </td>
+                <td style="padding-right:1px">{{ launch.mission_name }}</td>
+                <td>{{ launch.rocket.rocket_name }}</td>
+                <td>{{ launch.launch_site.site_name }}</td>
+                <td>{{ launch.launch_date_utc | date }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>

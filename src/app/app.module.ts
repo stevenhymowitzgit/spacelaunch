@@ -6,6 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SpaceLaunchInfoComponent } from './space-launch-info/space-launch-info.component';
 import { LaunchRocketService} from './services/rocket-launch-service';
+import { CommonModule } from '@angular/common';
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,9 @@ import { LaunchRocketService} from './services/rocket-launch-service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [LaunchRocketService],
   bootstrap: [AppComponent]

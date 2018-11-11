@@ -1,14 +1,16 @@
 thead {
-    color: #337AB7;
-  }
+  color: #337AB7;
+}
 
-  
+.title {
+  margin-left:34px;
+}
 .table {
-    margin-top: 25px;
-  }
+  margin-top: 25px;
+}
 
-  .container-fluid {
-    overflow-y:auto;
-    width:85%;
+.container-fluid {
+  overflow-y: auto;
+  width: 85%;
 
-  }
+}
